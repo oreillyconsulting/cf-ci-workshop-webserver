@@ -1,4 +1,4 @@
 FROM pauloreilly440/cf-ci-asset-image:latest
 
-COPY ./assets/*/photos/ /gallery/
+COPY ./assets/ /gallery/
 
