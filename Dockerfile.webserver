@@ -1,7 +1,7 @@
 FROM pauloreilly440/cf-ci-asset-image
 
 FROM pauloreilly440/cf-ci-base-image
-COPY --from=0 /assets/*/ /var/www/
+COPY --from=0 /galley/ /var/www/
 RUN apt update && apt-get install curl -y
 RUN curl -s "https://cdn.jsdelivr.net/npm/files.photo.gallery/index.php" -o "/var/www"
 
