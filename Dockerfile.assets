@@ -1,4 +1,4 @@
-FROM oreillyconsulting/cf-ci-workshop-baseimages:latest
+FROM pauloreilly440/cf-ci-base-image:latest
 
 COPY ./assets/photos/* /gallery
 
