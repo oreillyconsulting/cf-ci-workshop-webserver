@@ -6,8 +6,8 @@ RUN find /gallery/ -type f -exec mv {} /gallery/all \;
 FROM pauloreilly440/cf-ci-base-image
 COPY --from=0 /gallery/all/ /var/www/
 RUN ls /var/www
-RUN apt update && apt-get install curl -y
-RUN curl -s "https://cdn.jsdelivr.net/npm/files.photo.gallery/index.php" -o "/var/www"
+RUN apt update && apt-get install curl wget -y
+RUN wget -P /var/www "https://cdn.jsdelivr.net/npm/files.photo.gallery/index.php"
 
 FROM nginx:latest
 COPY --from=1 /var/www /var/www
